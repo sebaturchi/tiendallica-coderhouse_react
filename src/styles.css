@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  font-family: "Montserrat", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(231, 231, 231);
+}
+
+.navbar-nav {
+  background-color: rgb(255, 255, 255);
+  flex: 1;
+  justify-content: space-around;
+}
+
+main .contenedor-logo {
+  display: flex;
+  justify-content: center;
+}
+main .contenedor-logo .container-logo-tiendallica {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pie-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div div p {
+  color: rgb(255, 255, 255);
+}
+
+.tienda-por-dentro {
+  width: 1100px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+}
+
+.imagen-tienda-por-dentro {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sobre-nosotros-parrafos {
+  width: 85%;
+}
+
+footer {
+  background-color: rgb(50, 50, 50);
+  background: linear-gradient(0, rgb(100, 100, 100), rgb(50, 50, 50));
+}
+
+.logo-tienda-footer {
+  transition: transform 1.6s ease-in-out;
+}
+
+.logo-tienda-footer:hover {
+  transform: rotateY(360deg);
+}
+
+.nav-item.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logo-tiendallica {
+  transition: transform 0.3s ease;
+}
+
+.logo-tiendallica:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=styles.css.map */
