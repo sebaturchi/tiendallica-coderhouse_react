@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "marca": "Gibson",
+    "modelo": "Les Paul Standard 50s TB",
+    "condicion": "usada",
+    "precio": 7915899,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621278929633.jpg",
+    "destacado": true,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 2,
+    "marca": "Epiphone",
+    "modelo": "Les Paul Standard 60´s Ebony",
+    "condicion": "nueva",
+    "precio": 1951699,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621789706945.jpg",
+    "destacado": false,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 3,
+    "marca": "Epiphone",
+    "modelo": "Les Paul Classic HCS",
+    "condicion": "usada",
+    "precio": 1864999,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621780676134.jpg",
+    "destacado": true,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 4,
+    "marca": "Gibson",
+    "modelo": "SG Modern TBF",
+    "condicion": "nueva",
+    "precio": 6654099,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621351677404-600x873.jpg.webp",
+    "destacado": false,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 5,
+    "marca": "Gibson",
+    "modelo": "Les Paul Slash Standard VB",
+    "condicion": "nueva",
+    "precio": 8833999,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621277618619.jpg",
+    "destacado": true,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 6,
+    "marca": "Epiphone",
+    "modelo": "Flying V Ebony",
+    "condicion": "usada",
+    "precio": 1953999,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621730546262.jpg",
+    "destacado": false,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 7,
+    "marca": "Epiphone",
+    "modelo": "Firebird Vintage Sunburst",
+    "condicion": "usada",
+    "precio": 2227799,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621730314952.jpg",
+    "destacado": true,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 8,
+    "marca": "Epiphone",
+    "modelo": "Prophecy Extura Black",
+    "condicion": "nueva",
+    "precio": 2662999,
+    "imagen": "https://therockstore.com.ar/wp-content/uploads/2021/10/1621797224278-600x900.jpg.webp",
+    "destacado": false,
+    "categoria": "guitarras"
+  },
+  {
+    "id": 9,
+    "marca": "Fender",
+    "modelo": "Jazz Bass American Professional II",
+    "condicion": "nueva",
+    "precio": 5123999,
+    "imagen": "https://images-na.ssl-images-amazon.com/images/I/61LmfUn1RDL._AC_UL495_SR435,495_.jpg",
+    "destacado": true,
+    "categoria": "bajos"
+  },
+  {
+    "id": 10,
+    "marca": "Ibanez",
+    "modelo": "SR300E Charred Champagne Burst",
+    "condicion": "usada",
+    "precio": 1899999,
+    "imagen": "https://www.studiogears.com/media/catalog/product/cache/a41ee5a2a9d4fb87993ee25f687343c4/image/43504c06/ibanez-sr-standard-sr300e-electric-bass-charred-champagne-burst-sku-number-sr300eccb.jpg",
+    "destacado": false,
+    "categoria": "bajos"
+  },
+  {
+    "id": 11,
+    "marca": "Pearl",
+    "modelo": "Export EXX 22\" Jet Black",
+    "condicion": "nueva",
+    "precio": 6549999,
+    "imagen": "https://www.drumcentral.co.uk/wp-content/uploads/2024/11/Export-22-Jet-Black-600x600.jpg",
+    "destacado": true,
+    "categoria": "baterias"
+  },
+  {
+    "id": 12,
+    "marca": "Tama",
+    "modelo": "Imperialstar 22\" Hairline Blue",
+    "condicion": "usada",
+    "precio": 4599999,
+    "imagen": "https://r2.gear4music.com/media/89/897587/600/preview.jpg",
+    "destacado": false,
+    "categoria": "baterias"
+  }
+]
