@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import getProductos from "../data/productos";
+import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/config";
+import ItemList from "./ItemList";
 
 const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams();
@@ -12,13 +14,15 @@ const ItemListContainer = ({ greeting }) => {
     setLoading(true);
     setError(null);
 
-    getProductos()
-      .then((data) => {
-        if (categoryId) {
-          setItems(data.filter((prod) => prod.categoria === categoryId));
-        } else {
-          setItems(data);
-        }
+    const productosRef = collection(db, "productos");
+    const q = categoryId
+      ? query(productosRef, where("categoria", "==", categoryId))
+      : productosRef;
+
+    getDocs(q)
+      .then((snap) => {
+        const lista = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setItems(lista);
       })
       .catch(() => setError("Hubo un problema al cargar los productos"))
       .finally(() => setLoading(false));
@@ -42,26 +46,19 @@ const ItemListContainer = ({ greeting }) => {
     );
   }
 
+  if (items.length === 0) {
+    return (
+      <div className="container mt-4">
+        {greeting && <h2 className="text-center mb-4">{greeting}</h2>}
+        <div className="alert alert-info text-center">No hay productos en esta categoria.</div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mt-4">
       {greeting && <h2 className="text-center mb-4">{greeting}</h2>}
-      <div className="row">
-        {items.map((prod) => (
-          <div className="col-md-4 mb-3" key={prod.id}>
-            <div className="card h-100 shadow-sm">
-              <img src={prod.imagen} className="card-img-top" alt={prod.modelo} />
-              <div className="card-body">
-                <h5 className="card-title">{prod.marca} {prod.modelo}</h5>
-                <p className="card-text">Condición: {prod.condicion}</p>
-                <p className="card-text">Precio: ${prod.precio.toLocaleString()}</p>
-                <Link to={`/${prod.categoria}/${prod.id}`} className="btn btn-dark w-100">
-                  Ver detalle
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <ItemList items={items} />
     </div>
   );
 };

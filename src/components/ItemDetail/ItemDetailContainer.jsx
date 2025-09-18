@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getProductos from "../data/productos";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
-  const { categoria, id } = useParams();
+  const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,19 +14,19 @@ const ItemDetailContainer = () => {
     setLoading(true);
     setError(null);
 
-    getProductos()
-      .then((data) => {
-        const encontrado = data.find(
-          (prod) => prod.categoria === categoria && prod.id === parseInt(id)
-        );
+    const ref = doc(db, "productos", id);
 
-        if (!encontrado) throw new Error("Producto no encontrado");
-
-        setProducto(encontrado);
+    getDoc(ref)
+      .then((snap) => {
+        if (snap.exists()) {
+          setProducto({ id: snap.id, ...snap.data() });
+        } else {
+          throw new Error("Producto no encontrado");
+        }
       })
       .catch(() => setError("No se pudo cargar el producto"))
       .finally(() => setLoading(false));
-  }, [categoria, id]);
+  }, [id]);
 
   if (loading) {
     return (

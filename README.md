@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Tiendallica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación de e-commerce para instrumentos musicales desarrollada en **React**.  
+Permite navegar por categorías, ver el detalle de cada producto y realizar compras con persistencia en **Firebase Firestore**.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Listado y detalle de productos**  
+  - `ItemListContainer` obtiene productos desde **Firestore**.  
+  - `ItemDetailContainer` muestra la información completa de cada ítem.
 
-### `npm start`
+- **Carrito de compras con Context API**  
+  - Componente `Cart` para ver productos, cantidades, subtotales y total.  
+  - `CartWidget` muestra la cantidad de unidades en el ícono del carrito.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Selección de cantidad**  
+  - `ItemCount` valida stock, cantidad mínima y permite agregar al carrito.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Navegación SPA**  
+  - React Router para moverse entre inicio, categorías, detalle, carrito y checkout sin recargar la página.
 
-### `npm test`
+- **Firebase**  
+  - Productos almacenados en **Cloud Firestore**.  
+  - Generación de órdenes de compra al confirmar el checkout.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Experiencia de usuario**  
+  - Loaders mientras se consultan datos.  
+  - Mensajes condicionales como “Carrito vacío” o “Producto sin stock”.  
+  - Al finalizar la compra se muestra el **ID de la orden** generada en Firestore.
 
-### `npm run build`
+## Tecnologías
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 18**  
+- **React Router DOM 6**  
+- **Context API**  
+- **Firebase / Firestore**  
+- **Bootstrap 5** (estilos y componentes UI)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuración rápida
 
-### `npm run eject`
+1. **Clonar el repositorio**  
+   bash
+   git clone https://github.com/sebaturchi/tiendallica-coderhouse_react.git
+   cd tiendallica-coderhouse_react
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Instalar dependencias**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Configurar Firebase**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Crear un proyecto en Firebase Console
 
-## Learn More
+    Copiar las credenciales en src/firebase/config.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    La app se abrirá en http://localhost:3000

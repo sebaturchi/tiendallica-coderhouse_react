@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# archivos locales en desuso
+src/data/
+src/js/
+src/styles.css
+src/styles.scss
